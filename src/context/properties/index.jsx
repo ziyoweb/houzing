@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { reducer } from "react";
+import { reducer } from "./reducer";
 
 const PropertiesContext = createContext();
 
