@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Container, Wrapper, Section, Logo, Link, Main } from "./style";
 import { navbar } from "../../utils/navbar";
+import Button from "../../components/Generic/Button";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,20 +14,28 @@ const Navbar = () => {
             <Logo />
           </Section>
           <Section nav={true}>
-            {navbar.map(({ id, path, title }, index) => {
+            {navbar.map(({ path, title, hidden }, index) => {
               return (
-                <Link
-                  className={({ isActive }) => isActive && "active"}
-                  key={index}
-                  to={path}
-                >
-                  {title}
-                </Link>
+                !hidden && (
+                  <Link
+                    className={({ isActive }) => isActive && "active"}
+                    key={index}
+                    to={path}
+                  >
+                    {title}
+                  </Link>
+                )
               );
             })}
           </Section>
           <Section>
-            <button>Sign in</button>
+            <Button
+              onClick={() => navigate("/signin")}
+              width="120"
+              type={"dark"}
+            >
+              Sign in
+            </Button>
           </Section>
         </Wrapper>
       </Main>

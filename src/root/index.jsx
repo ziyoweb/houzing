@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import Navbar from "../components/Navbar";
+import ErrorPage from "../pages/ErrorPage";
 
 const Root = () => {
   return (
@@ -18,7 +19,7 @@ const Root = () => {
           })}
         </Route>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<h1>Not found</h1>} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );

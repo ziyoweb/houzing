@@ -32,7 +32,6 @@ const Section = styled.div`
 
   .active {
     color: #8cff00;
-    border-bottom: 1px solid #8cff00;
   }
 `;
 
@@ -40,7 +39,7 @@ const Logo = styled(navlogo)``;
 
 const Link = styled(NavLink)`
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   color: var(--colorText);
   text-decoration: none;
