@@ -31,7 +31,7 @@ const getType = ({ type }) => {
 };
 
 const Container = styled.input`
-  min-width: 120px;
+  /* min-width: 120px; */
   font-weight: 400;
   line-height: 20px;
   border-radius: 2px;
@@ -43,7 +43,19 @@ const Container = styled.input`
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
+  padding-left: ${({ icon }) => (icon ? "45px" : "16px")};
   /* ${getType} */
 `;
 
-export { Container };
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: ${({ width }) => (width ? `${width}px` : "100%")};
+`;
+
+const Icon = styled.div`
+  position: absolute;
+`;
+
+export { Container, Wrapper, Icon };

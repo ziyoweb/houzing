@@ -1,13 +1,11 @@
 import React from "react";
 import { Container } from "./style";
-import { Button, Input } from "../Generic";
+import Filter from "../Filter";
 
 const Home = () => {
   return (
     <Container>
-      Home
-      <Input width={200} height={44} placeholder="Region" />
-      <Button>Test</Button>
+      <Filter />
     </Container>
   );
 };
