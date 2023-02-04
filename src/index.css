@@ -105,3 +105,20 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+:where(.css-dev-only-do-not-override-1n7nwfa).ant-carousel
+  .slick-dots
+  li
+  button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+:where(.css-dev-only-do-not-override-1n7nwfa).ant-carousel
+  .slick-dots
+  li.slick-active
+  button {
+  width: 10px;
+  height: 10px;
+}
