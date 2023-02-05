@@ -90,6 +90,13 @@ body {
   color: #0d263b;
 }
 
+.info {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #696969;
+}
+
 .ant-dropdown-menu-item {
   padding: 0 !important;
 }
