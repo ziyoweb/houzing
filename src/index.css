@@ -90,6 +90,13 @@ body {
   color: #0d263b;
 }
 
+.info {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #696969;
+}
+
 .ant-dropdown-menu-item {
   padding: 0 !important;
 }
@@ -104,4 +111,21 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+:where(.css-dev-only-do-not-override-1n7nwfa).ant-carousel
+  .slick-dots
+  li
+  button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+:where(.css-dev-only-do-not-override-1n7nwfa).ant-carousel
+  .slick-dots
+  li.slick-active
+  button {
+  width: 10px;
+  height: 10px;
 }
