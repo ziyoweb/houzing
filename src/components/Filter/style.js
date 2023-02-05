@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ReactComponent as filter } from "../../assets/icons/filter.svg";
 import { ReactComponent as search } from "../../assets/icons/search.svg";
 import { ReactComponent as houses } from "../../assets/icons/houses.svg";
-import { Dropdown } from "antd";
 
 const Container = styled.div`
   display: flex;
