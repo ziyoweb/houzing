@@ -2,8 +2,15 @@ import React, { useRef } from "react";
 import { Dropdown } from "antd";
 import { Container, Icon, MenuWrapper, Section } from "./style";
 import { Button, Input } from "../Generic";
+import { uzeReplace } from "../../hooks/uzeReplace";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useSearch } from "./../../hooks/useSearch";
 
 const Filter = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const query = useSearch();
+
   const countryRef = useRef();
   const regionRef = useRef();
   const cityRef = useRef();
@@ -16,6 +23,10 @@ const Filter = () => {
   const minpriceRef = useRef();
   const maxpriceRef = useRef();
 
+  const onChange = ({ target: { name, value } }) => {
+    navigate(`${location.pathname}${uzeReplace(name, value)}`);
+  };
+
   const items = [
     {
       key: "1",
@@ -23,10 +34,38 @@ const Filter = () => {
         <MenuWrapper onClick={(e) => e.stopPropagation()}>
           <h2 className="subTitle">Address</h2>
           <Section>
-            <Input ref={countryRef} type="text" placeholder="Country" />
-            <Input ref={regionRef} type="text" placeholder="Region" />
-            <Input ref={cityRef} type="text" placeholder="City" />
-            <Input ref={zipRef} type="number" placeholder="Zip code" />
+            <Input
+              defaultValue={query.get("country")}
+              onChange={onChange}
+              name="country"
+              ref={countryRef}
+              type="text"
+              placeholder="Country"
+            />
+            <Input
+              defaultValue={query.get("region")}
+              onChange={onChange}
+              name="region"
+              ref={regionRef}
+              type="text"
+              placeholder="Region"
+            />
+            <Input
+              defaultValue={query.get("city")}
+              onChange={onChange}
+              name="city"
+              ref={cityRef}
+              type="text"
+              placeholder="City"
+            />
+            <Input
+              defaultValue={query.get("zip_code")}
+              onChange={onChange}
+              name="zip_code"
+              ref={zipRef}
+              type="number"
+              placeholder="Zip code"
+            />
           </Section>
           <h2 className="subTitle">Apartment info</h2>
           <Section>
@@ -43,6 +82,7 @@ const Filter = () => {
       ),
     },
   ];
+
   return (
     <Container>
       <Input

@@ -11,33 +11,53 @@ import {
 import noimg from "../../assets/imgs/noimg.png";
 import customer from "../../assets/imgs/customer.png";
 
-const HouseCard = ({ url, title, info, bed, bath, garage, ruler }) => {
+const HouseCard = ({ data = {} }) => {
+  const {
+    houseDetails,
+    address,
+    city,
+    country,
+    description,
+    salePrice,
+    price,
+    attachments,
+  } = data;
   return (
     <Container>
-      <Img src={url || noimg} />
+      <Img
+        src={
+          (attachments[0]?.imgPath.includes("http") &&
+            attachments[0]?.imgPath) ||
+          noimg
+        }
+      />
       <Customer>
         <Customer.Img src={customer} />
       </Customer>
 
       <Content>
-        <div className="subTitle">{title || "New Apartment Nice Wiew"}</div>
-        <div className="info">{info || "Quincy St, Brooklyn, NY, USA"}</div>
+        <div className="subTitle inline">
+          {country} {city} {description}
+        </div>
+        <div className="info inline">
+          {address || "Quincy St, Brooklyn, NY, USA"}
+        </div>
         <Details>
           <Details.Item>
             <Icons.Bed />
-            <div className="info">{bed || 0} Beds</div>
+            <div className="info">{houseDetails?.beds || 0} Beds</div>
           </Details.Item>
           <Details.Item>
             <Icons.Bath />
-            <div className="info">{bath || 0} Baths</div>
+            <div className="info">{houseDetails?.bath || 0} Baths</div>
           </Details.Item>
           <Details.Item>
             <Icons.Car />
-            <div className="info">{garage || 0} Garage</div>
+            <div className="info">{houseDetails?.garage || 0} Garage</div>
           </Details.Item>
           <Details.Item>
             <Icons.Ruler />
-            <div className="info">{ruler || 0} Sq Ft</div>
+            <div className="info">{houseDetails?.area || 0} Sq Ft</div>
           </Details.Item>
         </Details>
       </Content>
@@ -45,9 +65,9 @@ const HouseCard = ({ url, title, info, bed, bath, garage, ruler }) => {
       <Content footer="true">
         <Details.Item footer="true">
           <div className="info">
-            <del>$2,800/mo</del>
+            <del>${price || 0}/mo</del>
           </div>
-          <div className="subTitle">$7,500/mo</div>
+          <div className="subTitle">${salePrice || 0}/mo</div>
         </Details.Item>
         <Details.Item row="true">
           <Icons.Resize />

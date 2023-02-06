@@ -24,7 +24,7 @@ const GenCarousel = () => {
 
   return (
     <Container>
-      <Carousel /*autoplay*/ ref={slider} afterChange={onChange}>
+      <Carousel autoplay ref={slider} afterChange={onChange}>
         <Img height={571} src={house1} />
         <Img height={571} src={house2} />
         <Img height={571} src={house3} />

@@ -20,6 +20,7 @@ const Arrow = styled(arrow)`
   background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   transition: background-color 0.2s linear;
+  user-select: none;
 
   :hover {
     background-color: rgba(255, 255, 255, 0.4);

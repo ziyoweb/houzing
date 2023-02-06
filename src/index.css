@@ -123,3 +123,9 @@ input[type="number"] {
   width: 10px;
   height: 10px;
 }
+
+.inline {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

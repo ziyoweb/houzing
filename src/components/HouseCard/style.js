@@ -10,15 +10,22 @@ const Container = styled.div`
   width: 380px;
   min-height: 430px;
   background: #ffffff;
-  border: 1px solid #e6e9ec;
   border-radius: 3px;
   position: relative;
-  margin: 200px;
+  transition: all 0.22s linear;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  :hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
 `;
 
 const Img = styled.img`
   width: 100%;
   max-height: 220px;
+  min-height: 220px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 `;
@@ -86,7 +93,7 @@ const Customer = styled.div`
   right: 20px;
   border-radius: 50%;
   transform: translateY(-50%);
-  ::after {
+  /* ::after {
     content: "";
     position: absolute;
     top: 0;
@@ -103,13 +110,14 @@ const Customer = styled.div`
       #ca3288,
       #575acc
     );
-  }
+  } */
 `;
 
 Customer.Img = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 3px solid lightblue;
 `;
 
 export { Container, Img, Content, Details, Icons, Line, Customer };

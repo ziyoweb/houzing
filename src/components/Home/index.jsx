@@ -9,7 +9,7 @@ const Home = () => {
     <Container>
       <Filter />
       <GenCarousel />
-      <HouseCard />
+      {/* <HouseCard /> */}
     </Container>
   );
 };
