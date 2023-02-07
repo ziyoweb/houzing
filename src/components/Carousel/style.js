@@ -7,11 +7,13 @@ const Container = styled.div`
   height: 571px;
 `;
 
-const Arrow = styled(arrow)`
+const Arrow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   width: 50px;
   height: 50px;
-  padding: 18px;
   border-radius: 50%;
   top: 50%;
   right: ${({ left }) => !left && "32px"};
@@ -26,6 +28,8 @@ const Arrow = styled(arrow)`
     background-color: rgba(255, 255, 255, 0.4);
   }
 `;
+
+Arrow.Icon = styled(arrow)``;
 
 const Img = styled.img`
   width: 100%;

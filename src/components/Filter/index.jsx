@@ -86,6 +86,9 @@ const Filter = () => {
   return (
     <Container>
       <Input
+        defaultValue={query.get("address")}
+        onChange={onChange}
+        name="address"
         icon={<Icon.Houses />}
         type="text"
         placeholder={"Enter an address, neighborhood, city, or ZIP code"}

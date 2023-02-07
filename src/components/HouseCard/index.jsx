@@ -8,7 +8,7 @@ import {
   Line,
   Customer,
 } from "./style";
-import noimg from "../../assets/imgs/noimg.png";
+import noimg from "../../assets/imgs/noimg.jpg";
 import customer from "../../assets/imgs/customer.png";
 
 const HouseCard = ({ data = {} }) => {
@@ -21,6 +21,7 @@ const HouseCard = ({ data = {} }) => {
     salePrice,
     price,
     attachments,
+    category,
   } = data;
   return (
     <Container>
@@ -40,7 +41,8 @@ const HouseCard = ({ data = {} }) => {
           {country} {city} {description}
         </div>
         <div className="info inline">
-          {address || "Quincy St, Brooklyn, NY, USA"}
+          {address || "Quincy St, Brooklyn, NY, USA"}-
+          {category?.name || "Category"}
         </div>
         <Details>
           <Details.Item>

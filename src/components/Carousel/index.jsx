@@ -38,8 +38,12 @@ const GenCarousel = () => {
           Read more
         </Button>
       </Content>
-      <Arrow data-name="left" onClick={onMove} left="true" />
-      <Arrow data-name="right" onClick={onMove} />
+      <Arrow data-name="left" onClick={onMove} left="true">
+        <Arrow.Icon data-name="left" onClick={onMove} />
+      </Arrow>
+      <Arrow data-name="right" onClick={onMove}>
+        <Arrow.Icon data-name="right" onClick={onMove} />
+      </Arrow>
     </Container>
   );
 };
