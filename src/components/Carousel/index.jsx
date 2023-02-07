@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { Container, Arrow, Img, Blur, Content } from "./style";
 import { Carousel } from "antd";
-import house1 from "../../assets/imgs/house1.png";
-import house2 from "../../assets/imgs/house2.png";
-import house3 from "../../assets/imgs/house4.jpg";
+import house1 from "../../assets/imgs/house1.jpg";
+import house2 from "../../assets/imgs/house2.jpg";
+import house3 from "../../assets/imgs/house3.jpg";
 import { Button } from "../Generic";
 
 const GenCarousel = () => {
@@ -24,7 +24,7 @@ const GenCarousel = () => {
 
   return (
     <Container>
-      <Carousel autoplay ref={slider} afterChange={onChange}>
+      <Carousel ref={slider} afterChange={onChange}>
         <Img height={571} src={house1} />
         <Img height={571} src={house2} />
         <Img height={571} src={house3} />
