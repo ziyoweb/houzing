@@ -2,14 +2,14 @@ import React from "react";
 import { Container } from "./style";
 import Filter from "../Filter";
 import GenCarousel from "../Carousel";
-import CategoryCard from "../CategoryCard";
+import Category from "../Category";
 
 const Home = () => {
   return (
     <Container>
       <Filter />
       <GenCarousel />
-      <CategoryCard />
+      <Category />
     </Container>
   );
 };

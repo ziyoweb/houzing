@@ -6,17 +6,22 @@ import styled from "styled-components";
 // import { ReactComponent as like } from "../../assets/icons/love.svg";
 // import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
+const Wrapper = styled.div`
+  padding: 10px;
+`;
+
 const Container = styled.div`
   width: 100%;
-  max-width: 280px;
-  min-width: 230px;
-  min-height: 350px;
+  max-height: 350px;
   background-color: grey;
   border-radius: 3px;
   position: relative;
   cursor: pointer;
+  transition: box-shadow 0.2s linear;
 
-  margin: 200px;
+  :hover {
+    box-shadow: #0061df 0px 4px 12px;
+  }
 `;
 
 const Img = styled.img`
@@ -55,4 +60,4 @@ const Content = styled.div`
 
 const Icons = styled.div``;
 
-export { Container, Img, Content, Icons, Blur };
+export { Wrapper, Container, Img, Content, Icons, Blur };

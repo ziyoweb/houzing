@@ -129,3 +129,77 @@ input[type="number"] {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+/* SLICK CAROUSEL ARROWS STYLE */
+.slick-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e6e9ec;
+  box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.1);
+  left: -53px;
+}
+
+.slick-next {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e6e9ec;
+  box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.1);
+  right: -53px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: url("./assets/icons/arrowcrl.svg");
+  color: black;
+  line-height: 0.3;
+  width: 10px;
+  height: 5px;
+  transform: rotate(45deg);
+  vertical-align: top;
+}
+
+.slick-next:before {
+  content: url("./assets/icons/arrowcrlr.svg");
+}
+
+.ant-carousel .slick-dots li button:before {
+  content: "";
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 30px;
+}
+
+.slick-slider .slick-dots li button:before {
+  color: #0061df;
+  font-size: 10px;
+
+  /* opacity: 1; */
+}
+
+h1.slick-dots button:before {
+  width: 17px;
+  height: 17px;
+  line-height: 1.7;
+}
+
+.slick-dots {
+  bottom: -45px;
+}
+
+h1 .slick-active button:before {
+  border: 3px solid #0061df;
+  border-radius: 50%;
+  color: #fff !important;
+}
+
+.slick-dots li button:before {
+  opacity: 1;
+}

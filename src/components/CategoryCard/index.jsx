@@ -1,16 +1,18 @@
 import React from "react";
-import { Container, Content, Img, Blur } from "./style";
+import { Wrapper, Container, Content, Img, Blur } from "./style";
 import noimg from "../../assets/imgs/noimg.png";
 import category from "../../assets/imgs/category.png";
 
-const HouseCard = ({ data = {} }) => {
+const HouseCard = ({ data = {}, onClick }) => {
   const { name } = data;
   return (
-    <Container>
-      <Img src={category || noimg} />
-      <Blur />
-      <Content>{name || "Category name"}</Content>
-    </Container>
+    <Wrapper>
+      <Container onClick={onClick}>
+        <Img src={category || noimg} />
+        <Blur />
+        <Content>{name || "Category name"}</Content>
+      </Container>
+    </Wrapper>
   );
 };
 
