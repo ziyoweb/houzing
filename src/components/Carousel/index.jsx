@@ -33,7 +33,7 @@ const GenCarousel = () => {
       <Content>
         <Content.Title>Skyper Pool Partment</Content.Title>
         <Content.Desc>112 Glenwood Ave Hyde Park, Boston, MA</Content.Desc>
-        <Content.Price>$5,250/mo</Content.Price>
+        <Content.Price>$5,250 /mo</Content.Price>
         <Button width={180} type="dark">
           Read more
         </Button>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as filter } from "../../assets/icons/filter.svg";
 import { ReactComponent as search } from "../../assets/icons/search.svg";
 import { ReactComponent as houses } from "../../assets/icons/houses.svg";
+import { Select } from "antd";
 
 const Container = styled.div`
   display: flex;
@@ -49,4 +50,9 @@ const Section = styled.div`
   gap: 20px;
 `;
 
-export { Container, Icon, MenuWrapper, Section };
+const SelectAntd = styled(Select)`
+  width: 100% !important;
+  color: grey;
+`;
+
+export { Container, Icon, MenuWrapper, Section, SelectAntd };

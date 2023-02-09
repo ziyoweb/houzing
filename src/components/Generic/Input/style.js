@@ -36,15 +36,22 @@ const Container = styled.input`
   line-height: 20px;
   border-radius: 2px;
   border: 1px solid #e6e9ec;
-  outline-color: #0061df;
+  /* outline-width: 0.5px; */
+  outline: none;
   color: black;
   padding-left: 16px;
+  transition: box-shadow 0.27s linear;
   font-family: "Montserrat", sans-serif;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   padding-left: ${({ icon }) => (icon ? "45px" : "16px")};
   /* ${getType} */
+
+  :focus {
+    border-color: #4794f3;
+    box-shadow: #e9f3fc 0px 1px 2px, #e9f3fc 0px 0px 0px 2px;
+  }
 `;
 
 const Wrapper = styled.div`

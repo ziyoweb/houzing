@@ -1,12 +1,18 @@
-import React, { useRef } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useRef, useState, useEffect } from "react";
 import { Dropdown } from "antd";
-import { Container, Icon, MenuWrapper, Section } from "./style";
+import { Container, Icon, MenuWrapper, Section, SelectAntd } from "./style";
 import { Button, Input } from "../Generic";
 import { uzeReplace } from "../../hooks/uzeReplace";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSearch } from "./../../hooks/useSearch";
 
 const Filter = () => {
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("Category");
+
+  const { REACT_APP_BASE_URL: url } = process.env;
+
   const navigate = useNavigate();
   const location = useLocation();
   const query = useSearch();
@@ -17,14 +23,35 @@ const Filter = () => {
   const zipRef = useRef();
 
   const roomsRef = useRef();
-  const sizeRef = useRef();
-  const sortRef = useRef();
 
   const minpriceRef = useRef();
   const maxpriceRef = useRef();
 
   const onChange = ({ target: { name, value } }) => {
     navigate(`${location.pathname}${uzeReplace(name, value)}`);
+  };
+
+  useEffect(() => {
+    fetch(`${url}/categories/list`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res?.data || []);
+      });
+  }, []);
+
+  useEffect(() => {
+    let [d] = data?.filter(
+      (ctg) => ctg.id === Number(query.get("category_id"))
+    );
+    d?.name && setValue(d?.name);
+  }, [location?.search, data]);
+
+  const handleChange = (category_id) => {
+    navigate(`${location.pathname}${uzeReplace("category_id", category_id)}`);
+  };
+
+  const onChangeSort = (sort) => {
+    navigate(`${location.pathname}${uzeReplace("sort", sort)}`);
   };
 
   const items = [
@@ -69,14 +96,52 @@ const Filter = () => {
           </Section>
           <h2 className="subTitle">Apartment info</h2>
           <Section>
-            <Input ref={roomsRef} type="number" placeholder="Rooms" />
-            <Input ref={sizeRef} type="number" placeholder="Size" />
-            <Input ref={sortRef} type="text" placeholder="Sort" />
+            <Input
+              defaultValue={query.get("room")}
+              onChange={onChange}
+              name="room"
+              ref={roomsRef}
+              type="number"
+              placeholder="Rooms"
+            />
+            <SelectAntd
+              defaultValue={query.get("sort") || "Sort"}
+              onChange={onChangeSort}
+              options={[
+                { value: "", label: "All Sort" },
+                { value: "asc", label: "Increase" },
+                { value: "desc", label: "Decrease" },
+              ]}
+            />
+            <SelectAntd
+              defaultValue={value}
+              onChange={handleChange}
+              options={[
+                { value: "", label: "All Category" },
+                ...data.map((value) => {
+                  return { value: value?.id, label: value?.name || "Empty" };
+                }),
+              ]}
+            />
           </Section>
           <h2 className="subTitle">Price</h2>
           <Section>
-            <Input ref={minpriceRef} type="number" placeholder="Min price" />
-            <Input ref={maxpriceRef} type="number" placeholder="Max price" />
+            <Input
+              defaultValue={query.get("min_price")}
+              onChange={onChange}
+              name="min_price"
+              ref={minpriceRef}
+              type="number"
+              placeholder="Min price"
+            />
+            <Input
+              defaultValue={query.get("max_price")}
+              onChange={onChange}
+              name="max_price"
+              ref={maxpriceRef}
+              type="number"
+              placeholder="Max price"
+            />
           </Section>
         </MenuWrapper>
       ),

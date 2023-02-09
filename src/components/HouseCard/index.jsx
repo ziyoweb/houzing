@@ -42,7 +42,8 @@ const HouseCard = ({ data = {} }) => {
         </div>
         <div className="info inline">
           {address || "Quincy St, Brooklyn, NY, USA"}-
-          {category?.name || "Category"}
+          {category?.name || "Category"}{" "}
+          <span>{houseDetails?.room || "no"}-rooms</span>
         </div>
         <Details>
           <Details.Item>
@@ -67,9 +68,9 @@ const HouseCard = ({ data = {} }) => {
       <Content footer="true">
         <Details.Item footer="true">
           <div className="info">
-            <del>${price || 0}/mo</del>
+            <del>${price || 0} /mo</del>
           </div>
-          <div className="subTitle">${salePrice || 0}/mo</div>
+          <div className="subTitle">${salePrice || 0} /mo</div>
         </Details.Item>
         <Details.Item row="true">
           <Icons.Resize />

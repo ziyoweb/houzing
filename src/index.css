@@ -203,3 +203,23 @@ h1 .slick-active button:before {
 .slick-dots li button:before {
   opacity: 1;
 }
+
+/* ANT DESIGN SELECT COMPONENT */
+.ant-select-selector {
+  font-weight: 400 !important;
+  color: #757575 !important;
+  height: 44px !important;
+  font-family: "Montserrat", sans-serif !important;
+  border-radius: 2px !important;
+  box-shadow: none;
+  padding: 0 16px !important;
+}
+.ant-select-selector::active,
+.ant-select-selector::focus,
+.ant-select-selector::target {
+  box-shadow: none !important;
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  line-height: 43px !important;
+}

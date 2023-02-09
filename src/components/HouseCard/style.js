@@ -28,6 +28,7 @@ const Img = styled.img`
   width: 100%;
   max-height: 220px;
   min-height: 200px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   border-top-left-radius: 3px;
@@ -39,6 +40,14 @@ const Content = styled.div`
   flex-direction: ${({ footer }) => (footer ? "row" : "column")};
   justify-content: ${({ footer }) => footer && "space-between"};
   padding: ${({ footer }) => (footer ? "8px 20px" : "24px 20px 16px 20px")};
+
+  span {
+    color: var(--colorPrimary);
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-weight: 500;
+    background-color: #e9ecef;
+  }
 `;
 
 const Details = styled.div`
@@ -70,7 +79,7 @@ Icons.Ruler = styled(ruler)`
 Icons.Like = styled(like)`
   width: 35px;
   height: 35px;
-  padding: 8px;
+  padding: 9px;
   border-radius: 50%;
   background-color: #f6f8f9;
   margin-left: 20px;
@@ -81,6 +90,7 @@ Icons.Like = styled(like)`
     transform: scale(1.2);
     background-color: #f9f9f9;
   }
+  stroke: 2;
 `;
 Icons.Resize = styled(resize)`
   cursor: pointer;
@@ -121,7 +131,7 @@ Customer.Img = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 3px solid lightblue;
+  border: 3px solid white;
 `;
 
 export { Container, Img, Content, Details, Icons, Line, Customer };
