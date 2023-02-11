@@ -12,7 +12,7 @@ export const Why = () => {
         </div>
         <Content>
           {WhyChoiceCardData.map(({ id, icon, title, text }) => (
-            <Card>
+            <Card key={id}>
               <IconWrap>{icon}</IconWrap>
               <h3 className="subtitle center">{title}</h3>
               <p className="info center">{text}</p>

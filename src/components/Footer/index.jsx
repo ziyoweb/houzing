@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Wrapper, Container, Content, IconWrap, Icons } from "./style";
 import { FooterLinks } from "../../mock";
@@ -65,7 +66,7 @@ export const Why = () => {
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://linkedin.com">
+              <a target="_blank" href="https://linkedin.com" rel="noreferrer">
                 <IconWrap>
                   <Icons.Linkedin />
                 </IconWrap>
@@ -77,8 +78,8 @@ export const Why = () => {
           <Content key={id}>
             <Content.Title>{title}</Content.Title>
             <ul className="footer__links">
-              {links.map((item) => (
-                <li className="footer__link">
+              {links.map((item, index) => (
+                <li key={index} className="footer__link">
                   <a href="#">{item}</a>
                 </li>
               ))}
