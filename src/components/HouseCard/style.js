@@ -6,21 +6,28 @@ import { ReactComponent as ruler } from "../../assets/icons/ruler.svg";
 import { ReactComponent as like } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
+const Wrapper = styled.div`
+  padding: ${({ padding }) => padding && `20px ${padding}px`};
+`;
+
 const Container = styled.div`
   width: 100%;
   max-width: 380px;
-  min-width: 330px;
+  /* min-width: 330px; */
   min-height: 430px;
   background: #ffffff;
   border-radius: 3px;
+
   position: relative;
   transition: all 0.22s linear;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
   :hover {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
-      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
   }
 `;
 
@@ -134,4 +141,4 @@ Customer.Img = styled.img`
   border: 3px solid white;
 `;
 
-export { Container, Img, Content, Details, Icons, Line, Customer };
+export { Wrapper, Container, Img, Content, Details, Icons, Line, Customer };

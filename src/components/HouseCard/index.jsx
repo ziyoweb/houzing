@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Wrapper,
   Container,
   Content,
   Img,
@@ -11,7 +12,7 @@ import {
 import noimg from "../../assets/imgs/noimg.jpg";
 import customer from "../../assets/imgs/customer.png";
 
-const HouseCard = ({ data = {} }) => {
+const HouseCard = ({ data = {}, padding }) => {
   const {
     houseDetails,
     address,
@@ -24,60 +25,62 @@ const HouseCard = ({ data = {} }) => {
     category,
   } = data;
   return (
-    <Container>
-      <Img
-        src={
-          (attachments[0]?.imgPath.includes("http") &&
-            attachments[0]?.imgPath) ||
-          noimg
-        }
-      />
-      <Customer>
-        <Customer.Img src={customer} />
-      </Customer>
+    <Wrapper padding={padding}>
+      <Container>
+        <Img
+          src={
+            (attachments[0]?.imgPath.includes("http") &&
+              attachments[0]?.imgPath) ||
+            noimg
+          }
+        />
+        <Customer>
+          <Customer.Img src={customer} />
+        </Customer>
 
-      <Content>
-        <div className="subTitle inline">
-          {country} {city} {description}
-        </div>
-        <div className="info inline">
-          {address || "Quincy St, Brooklyn, NY, USA"}-
-          {category?.name || "Category"}{" "}
-          <span>{houseDetails?.room || "no"}-rooms</span>
-        </div>
-        <Details>
-          <Details.Item>
-            <Icons.Bed />
-            <div className="info">{houseDetails?.beds || 0} Beds</div>
-          </Details.Item>
-          <Details.Item>
-            <Icons.Bath />
-            <div className="info">{houseDetails?.bath || 0} Baths</div>
-          </Details.Item>
-          <Details.Item>
-            <Icons.Car />
-            <div className="info">{houseDetails?.garage || 0} Garage</div>
-          </Details.Item>
-          <Details.Item>
-            <Icons.Ruler />
-            <div className="info">{houseDetails?.area || 0} Sq Ft</div>
-          </Details.Item>
-        </Details>
-      </Content>
-      <Line />
-      <Content footer="true">
-        <Details.Item footer="true">
-          <div className="info">
-            <del>${price || 0} /mo</del>
+        <Content>
+          <div className="subTitle inline">
+            {country || "empty"} {city || "empty"} {description || "empty"}
           </div>
-          <div className="subTitle">${salePrice || 0} /mo</div>
-        </Details.Item>
-        <Details.Item row="true">
-          <Icons.Resize />
-          <Icons.Like />
-        </Details.Item>
-      </Content>
-    </Container>
+          <div className="info inline">
+            {address || "Quincy St, Brooklyn, NY, USA"}-
+            {category?.name || "Category"}{" "}
+            <span>{houseDetails?.room || "no"}-rooms</span>
+          </div>
+          <Details>
+            <Details.Item>
+              <Icons.Bed />
+              <div className="info">{houseDetails?.beds || 0} Beds</div>
+            </Details.Item>
+            <Details.Item>
+              <Icons.Bath />
+              <div className="info">{houseDetails?.bath || 0} Baths</div>
+            </Details.Item>
+            <Details.Item>
+              <Icons.Car />
+              <div className="info">{houseDetails?.garage || 0} Garage</div>
+            </Details.Item>
+            <Details.Item>
+              <Icons.Ruler />
+              <div className="info">{houseDetails?.area || 0} Sq Ft</div>
+            </Details.Item>
+          </Details>
+        </Content>
+        <Line />
+        <Content footer="true">
+          <Details.Item footer="true">
+            <div className="info">
+              <del>${price || 0} /mo</del>
+            </div>
+            <div className="subTitle">${salePrice || 0} /mo</div>
+          </Details.Item>
+          <Details.Item row="true">
+            <Icons.Resize />
+            <Icons.Like />
+          </Details.Item>
+        </Content>
+      </Container>
+    </Wrapper>
   );
 };
 

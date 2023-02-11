@@ -52,6 +52,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -88,6 +92,20 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #0d263b;
+}
+
+.describleText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #696969;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.center {
+  text-align: center;
 }
 
 .info {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "./style";
+import { Container, Info } from "./style";
 import HouseCard from "./../HouseCard";
 import Filter from "../Filter";
 import { useLocation } from "react-router-dom";
@@ -19,6 +19,12 @@ const Properties = () => {
   return (
     <>
       <Filter />
+      <Info>
+        <div className="title">Properties</div>
+        <div className="describleText">
+          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        </div>
+      </Info>
       <Container>
         {data.map((value, index) => (
           <HouseCard key={index} data={value} />
