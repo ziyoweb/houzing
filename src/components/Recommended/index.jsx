@@ -64,7 +64,7 @@ export const Recommended = ({ title, text }) => {
           return (
             <HouseCard
               padding={10}
-              onClick={() => navigate(`/properties?category_id=${value.id}`)}
+              onClick={() => navigate(`/properties/${value.id}`)}
               key={value.id}
               data={value}
             />

@@ -5,6 +5,7 @@ import RootContext from "./context";
 import "antd/dist/reset.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

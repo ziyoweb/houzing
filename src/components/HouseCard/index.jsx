@@ -12,7 +12,7 @@ import {
 import noimg from "../../assets/imgs/noimg.jpg";
 import customer from "../../assets/imgs/customer.png";
 
-const HouseCard = ({ data = {}, padding }) => {
+const HouseCard = ({ data = {}, padding, onClick }) => {
   const {
     houseDetails,
     address,
@@ -26,7 +26,7 @@ const HouseCard = ({ data = {}, padding }) => {
   } = data;
   return (
     <Wrapper padding={padding}>
-      <Container>
+      <Container onClick={onClick}>
         <Img
           src={
             (attachments[0]?.imgPath.includes("http") &&
@@ -70,9 +70,9 @@ const HouseCard = ({ data = {}, padding }) => {
         <Content footer="true">
           <Details.Item footer="true">
             <div className="info">
-              <del>${price || 0} /mo</del>
+              <del>${salePrice || 0} /mo</del>
             </div>
-            <div className="subTitle">${salePrice || 0} /mo</div>
+            <div className="subTitle">${price || 0} /mo</div>
           </Details.Item>
           <Details.Item row="true">
             <Icons.Resize />

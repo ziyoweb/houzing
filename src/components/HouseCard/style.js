@@ -20,14 +20,11 @@ const Container = styled.div`
 
   position: relative;
   transition: all 0.22s linear;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
 
   :hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
-      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
 `;
 

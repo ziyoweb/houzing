@@ -30,6 +30,16 @@ const getType = ({ type }) => {
   }
 };
 
+const getWidth = ({ width }) => {
+  if (!width) {
+    return "130px";
+  } else if (`${width}`.includes("%")) {
+    return "100%";
+  } else {
+    return `${width}px`;
+  }
+};
+
 const Container = styled.button`
   display: flex;
   align-items: center;
@@ -40,7 +50,7 @@ const Container = styled.button`
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "16px")};
-  width: ${({ width }) => (width ? `${width}px` : "100px")};
+  width: ${getWidth};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   ${getType}
   cursor: pointer;
