@@ -17,7 +17,6 @@ import {
   Feature,
 } from "./style";
 import { Checkbox } from "antd";
-import { useRequest } from "../../hooks/useRequest";
 import Recommended from "../Recommended";
 import user from "../../assets/imgs/customer.png";
 
@@ -26,7 +25,6 @@ const HouseItem = () => {
   const [showMore, setShowMore] = useState(false);
 
   const params = useParams();
-  const request = useRequest();
 
   useEffect(() => {
     // request({ url: `/houses/list/${params?.id}` }).then((res) =>
