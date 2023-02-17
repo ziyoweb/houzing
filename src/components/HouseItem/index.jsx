@@ -20,7 +20,6 @@ import { Checkbox } from "antd";
 import { useRequest } from "../../hooks/useRequest";
 import Recommended from "../Recommended";
 import user from "../../assets/imgs/customer.png";
-const { REACT_APP_BASE_URL } = process.env;
 
 const HouseItem = () => {
   const [data, setData] = useState({});

@@ -6,6 +6,8 @@ import Button from "../Generic/Button";
 import Footer from "../Footer";
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const token = localStorage.getItem("token");
   return (
     <Container>
       <Main>
@@ -34,7 +36,7 @@ const Navbar = () => {
               width="120"
               type={"dark"}
             >
-              Sign in
+              {token ? "Profile" : "Sign in"}
             </Button>
           </Section>
         </Wrapper>
