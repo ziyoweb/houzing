@@ -17,9 +17,10 @@ const Container = styled.div`
   min-height: 430px;
   background: #ffffff;
   border-radius: 3px;
-
+  border: 1px solid #d9d9d9;
   position: relative;
   transition: all 0.22s linear;
+  cursor: pointer;
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
 
   :hover {
@@ -30,9 +31,9 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  max-height: 220px;
-  min-height: 200px;
-  height: 100%;
+  height: 220px;
+  /* max-height: 220px;
+  min-height: 200px; */
   object-fit: cover;
   object-position: center;
   border-top-left-radius: 3px;
@@ -85,11 +86,14 @@ Icons.Like = styled(like)`
   height: 35px;
   padding: 9px;
   border-radius: 50%;
-  background-color: #f6f8f9;
+  background-color: ${({ favorite }) => (favorite ? "red" : "#f6f8f9")};
   margin-left: 20px;
   cursor: pointer;
   user-select: none;
   transition: all 0.05s linear;
+  & path {
+    fill: ${({ favorite }) => favorite && "#fff"};
+  }
   :active {
     transform: scale(1.2);
     background-color: #f9f9f9;

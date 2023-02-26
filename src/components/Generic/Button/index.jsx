@@ -1,9 +1,15 @@
 import React from "react";
 import { Container } from "./style";
 
-const Button = ({ children, type, width, onClick }) => {
+const Button = ({ height, fontSize, children, type, width, onClick }) => {
   return (
-    <Container onClick={onClick} type={type} width={width}>
+    <Container
+      fontSize={fontSize}
+      height={height}
+      onClick={onClick}
+      type={type}
+      width={width}
+    >
       {children || "No text"}
     </Container>
   );

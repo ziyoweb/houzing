@@ -1,11 +1,5 @@
-import { message } from "antd";
-
 export const useRequest = () => {
   const { REACT_APP_BASE_URL } = process.env;
-
-  const warning = () => {
-    message.success("Warning Email or Password");
-  };
 
   const request = async ({
     me,
@@ -15,7 +9,6 @@ export const useRequest = () => {
     token,
     method = "GET",
   }) => {
-    // headers["Content-Type"] = "aplication/json";
     if (token)
       headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
 
@@ -32,10 +25,8 @@ export const useRequest = () => {
         }${url}`,
         options
       ).then((res) => res.json());
-
       return res;
     } catch (err) {
-      warning(err);
       return err;
     }
   };

@@ -4,6 +4,7 @@ const Container = styled.div`
   width: 100%;
   margin: 64px auto;
   max-width: 580px;
+  min-width: 580px;
   min-height: 376px;
   background: #ffffff;
   border: 1px solid #e6e9ec;

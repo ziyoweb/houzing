@@ -21,6 +21,14 @@ const getType = ({ type }) => {
         color: "#fff",
       };
 
+    case "darkblue":
+      return {
+        borderRadius: "3px",
+        backgroundColor: "#0D263B",
+        border: "1px solid transparent",
+        color: "#fff",
+      };
+
     default:
       return {
         backgroundColor: "#0061DF",

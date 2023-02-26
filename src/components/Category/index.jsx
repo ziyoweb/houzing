@@ -55,6 +55,7 @@ export const GenCarousel = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res?.data || []);
+        window.scrollTo(0, 0);
       });
   }, []);
 

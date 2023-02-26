@@ -25,9 +25,9 @@ const GenCarousel = () => {
   return (
     <Container>
       <Carousel ref={slider} afterChange={onChange}>
-        <Img height={571} src={house1} />
-        <Img height={571} src={house2} />
-        <Img height={571} src={house3} />
+        <Img height={670} src={house1} />
+        <Img height={670} src={house2} />
+        <Img height={670} src={house3} />
       </Carousel>
       <Blur />
       <Content>

@@ -46,4 +46,24 @@ const Link = styled(NavLink)`
   text-decoration: none;
 `;
 
-export { Container, Wrapper, Section, Logo, Link, Main };
+const Content = styled.div`
+  padding: 20px 50px 20px 16px;
+  cursor: default;
+  background-color: #fff;
+`;
+
+Content.Item = styled.p`
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  letter-spacing: 0.5px;
+  font-family: "Montserrat", sans-serif !important;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+`;
+
+export { Container, Wrapper, Section, Logo, Link, Main, Content };

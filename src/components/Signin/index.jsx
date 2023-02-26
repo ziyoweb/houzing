@@ -4,25 +4,19 @@ import Button from "../Generic/Button";
 import { Container, Title } from "./style";
 import { useNavigate } from "react-router-dom";
 import useRequest from "../../hooks/useRequest";
-import { ToastContainer, toast } from "react-toastify";
+import { message } from "antd";
 
 const Signin = () => {
   const [body, setBody] = useState({});
   const navigate = useNavigate();
   const request = useRequest();
 
-  const notify = (title, type) =>
-    toast[type](title, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
+  const info = () => {
+    message.success("Successfully logged in ");
+  };
+  const error = () => {
+    message.error("Email or password wrong ");
+  };
   const onChange = ({ target: { value, placeholder } }) => {
     setBody({
       ...body,
@@ -34,13 +28,11 @@ const Signin = () => {
     request({ url: `/public/auth/login`, method: "POST", body, me: true }).then(
       (res) => {
         if (res?.authenticationToken) {
-          notify("You are registered", "success");
-          setTimeout(() => {
-            navigate("/home");
-          }, 2000);
+          navigate("/home");
           localStorage.setItem("token", res?.authenticationToken);
+          info();
         } else {
-          notify("Wrong Email or Password", "error");
+          error();
         }
       }
     );
@@ -48,11 +40,9 @@ const Signin = () => {
 
   return (
     <Container>
-      <ToastContainer />
-
       <Title>Sign in</Title>
       <Input onChange={onChange} type="email" placeholder="email" />
-      <Input onChange={onChange} type="text" placeholder="password" />
+      <Input onChange={onChange} type="password" placeholder="password" />
       <Button onClick={onSubmit} width="%">
         Login
       </Button>
