@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Container,
-  Icons,
   User,
   Wrapper,
   MenuWrapper,
@@ -9,8 +8,8 @@ import {
   SelectAntd,
 } from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import useRequest from "../../hooks/useRequest";
-import { uzeReplace } from "../../hooks/uzeReplace";
+// import useRequest from "../../hooks/useRequest";
+// import { uzeReplace } from "../../hooks/uzeReplace";
 import { useSearch } from "../../hooks/useSearch";
 import { Button, Input } from "../Generic";
 import { useFormik } from "formik";
@@ -18,15 +17,15 @@ import { useFormik } from "formik";
 export const MyProfile = () => {
   const [data, setData] = useState([]);
   const [value, setValue] = useState("Category");
-  const { search } = useLocation();
-  const navigate = useNavigate();
-  const request = useRequest();
+  // const { search } = useLocation();
+  // const navigate = useNavigate();
+  // const request = useRequest();
   const location = useLocation();
   const query = useSearch();
 
-  const onChange = ({ target: { name, value } }) => {
-    navigate(`${location.pathname}${uzeReplace(name, value)}`);
-  };
+  // const onChange = ({ target: { name, value } }) => {
+  //   navigate(`${location.pathname}${uzeReplace(name, value)}`);
+  // };
   const { REACT_APP_BASE_URL: url } = process.env;
 
   useEffect(() => {
