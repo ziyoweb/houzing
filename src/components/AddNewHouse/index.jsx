@@ -7,7 +7,7 @@ import {
   Section,
   SelectAntd,
 } from "./style";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import useRequest from "../../hooks/useRequest";
 // import { uzeReplace } from "../../hooks/uzeReplace";
 import { useSearch } from "../../hooks/useSearch";
