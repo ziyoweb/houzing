@@ -21,7 +21,9 @@ export const useRequest = () => {
     try {
       let res = await fetch(
         `${
-          me ? "https://houzing-app.herokuapp.com/api" : REACT_APP_BASE_URL
+          me
+            ? "https://houzing-app.herokuapp.com/api"
+            : "http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081"
         }${url}`,
         options
       ).then((res) => res.json());

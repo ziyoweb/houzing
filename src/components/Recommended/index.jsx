@@ -51,9 +51,14 @@ export const Recommended = ({ title, text }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${url}/houses/list`)
+    fetch(
+      `http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api/v1/houses/list`
+    )
       .then((res) => res.json())
-      .then((res) => setData(res?.data || []));
+      .then((res) => {
+        setData(res?.data || []);
+        console.log(res, "hello");
+      });
   }, []);
   return (
     <Container>

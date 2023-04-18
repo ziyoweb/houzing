@@ -66,7 +66,7 @@ export const GenCarousel = () => {
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </div>
       <Slider {...settings}>
-        {data.map((value) => {
+        {data.map((value, index) => {
           return (
             <CategoryCard
               onClick={() => navigate(`/properties?category_id=${value.id}`)}
